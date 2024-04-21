@@ -350,22 +350,18 @@ default_scheduler = get_config_item_or_set_default(
 )
 default_styles = get_config_item_or_set_default(
     key='default_styles',
-    default_value=[
-        "Fooocus V2",
-        "Fooocus Enhance",
-        "Fooocus Sharp"
-    ],
+    default_value=[],
     validator=lambda x: isinstance(x, list) and all(y in modules.sdxl_styles.legal_style_names for y in x)
 )
 default_prompt_negative = get_config_item_or_set_default(
     key='default_prompt_negative',
-    default_value='',
+    default_value='Watermark, jpg artifacts, noise, low resolution, oversaturated, bad artist, blurry, text, b&w, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, 3d, disfigured, bad art, deformed, extra limbs, weird colors, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed,  bad anatomy, bad proportions, extra limbs, cloned face, disfigured, out of frame,  extra limbs, bad anatomy,  malformed limbs, missing arms, missing legs, extra arms, extra legs, mutated hands, fused fingers, too many fingers, long neck, Photoshop, video game, poorly drawn hands, poorly drawn feet, poorly drawn face, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, bad art, bad anatomy, 3d render',
     validator=lambda x: isinstance(x, str),
     disable_empty_as_none=True
 )
 default_prompt = get_config_item_or_set_default(
     key='default_prompt',
-    default_value='',
+    default_value='man naked, no clothes, full nudity',
     validator=lambda x: isinstance(x, str),
     disable_empty_as_none=True
 )
